@@ -1,0 +1,23 @@
+name: CI
+run-name: ${{ github.actor }} 
+env: 
+  GITHUB_ACTIONS: true
+on:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  github-task-job:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Showing GITHUB_ACTIONS variable
+        run: echo $GITHUB_ACTIONS
+        
+      - name: Showing branch and repository
+        run: echo "Name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}"
+
+      - name: Showing event name
+        run:  echo "The job is triggered by ${{ github.event_name }} event"
