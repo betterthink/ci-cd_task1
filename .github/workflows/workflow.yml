@@ -5,7 +5,8 @@ env:
 on:
   pull_request:
     branches: [ "main" ]
-
+  
+  workflow_dispatch:
 jobs:
   github-task-job:
     runs-on: ubuntu-latest
